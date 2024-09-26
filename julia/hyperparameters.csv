@@ -1,0 +1,7 @@
+hyperparameters,learningRate,lambda,minibandsize
+FetoO,0.0004,1.0,1024
+O7toO6,0.005,0.4,1024
+C6toC5,0.006,0.1,1024
+C6toC4,0.005,0.05,1024
+nHe2,0.005,0.0001,1024
+vHe2,0.0025,0.9,1024
