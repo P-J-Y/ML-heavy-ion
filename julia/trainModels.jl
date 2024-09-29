@@ -506,6 +506,8 @@ theParameterName*
 ############### train 10 times to show the reproducibility ##############
 αs=Float32.([0.0004,0.005,0.006,0.005,0.005,0.0025])
 λs=Float32.([1.,0.4,0.1,0.05,1e-4,0.9])
+outputNames = ["FetoO", "O7toO6", "C6toC5", "C6toC4", "nHe2", "vHe2"]
+outputTitles = ["Fe/O", "O7/O6", "C6/C5", "C6/C4", "Nα", "Vα"]
 
 CCs = Array{Float32}(undef,6,3,10)
 for i in 1:10
