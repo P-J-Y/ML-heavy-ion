@@ -37,12 +37,22 @@ mTest = m_total - m - mCV
 # testData = Data[:, m+mCV+1:end]
 
 ########## 2. test set is the last 10% of the data，not random ##########
-testData = Data[:, m+mCV+1:end]
-Data = Data[:, 1:m+mCV]
-randindex = randperm(m+mCV)
+# testData = Data[:, m+mCV+1:end]
+# Data = Data[:, 1:m+mCV]
+# randindex = randperm(m+mCV)
+# Data = Data[:, randindex]
+# trainData = Data[:, 1:m]
+# cvData = Data[:, m+1:m+mCV]
+
+########## 3. test set is the first 10% of the data，not random ##########
+testData = Data[:, 1:mTest]
+Data = Data[:, mTest+1:end]
+randindex = randperm(m_total-mTest)
 Data = Data[:, randindex]
 trainData = Data[:, 1:m]
-cvData = Data[:, m+1:m+mCV]
+cvData = Data[:, m+1:end]
+
+
 ##########################################
 
 DatetimeNumtest = reshape(DatetimeNum[m+mCV+1:end],(1,mTest))
