@@ -388,8 +388,8 @@ end
 λs=Float32.([1.,0.4,0.1,0.05,1e-4,0.9])
 models,devcvs = getTotModel(X,Y,Xcv,Ycv,αs,λs;epochNum=Int32(1001))
 
-@save "data\\models.jld2" models devcvs
-# @load "data\\models.jld2" models
+# @save "data\\models.jld2" models devcvs
+@load "data\\models.jld2" models
 outputNames = ["FetoO", "O7toO6", "C6toC5", "C6toC4", "nHe2", "vHe2"]
 outputTitles = ["Fe/O", "O7/O6", "C6/C5", "C6/C4", "Nα", "Vα"]
 panelIdxs = ["a" "b" "c" "d" "e" "f"]

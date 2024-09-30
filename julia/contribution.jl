@@ -173,9 +173,9 @@ n1s = [40,70,100]
 αs=Float32.([0.0004,0.005,0.006,0.005,0.005,0.0025])
 λs=Float32.([1.,0.4,0.1,0.05,1e-4,0.9])
 MSETrain,MSEDev,CCTrain,CCDev = contributionTol(X,Y,Xcv,Ycv,αs,λs,n1s;epochNum=Int32(1001))
-@save "data\\contributions.jld2" MSETrain MSEDev CCTrain CCDev
+# @save "data\\contributions.jld2" MSETrain MSEDev CCTrain CCDev
 
-# @load "data\\contributions.jld2" MSETrain MSEDev CCTrain CCDev
+@load "data\\contributions.jld2" MSETrain MSEDev CCTrain CCDev
 outputNames = ["FetoO" "O7toO6" "C6toC5" "C6toC4" "nHe2" "vHe2"]
 outputTitles = ["Fe/O" "O7/O6" "C6/C5" "C6/C4" "Nα" "Vα"]
 inputNames = ["B" "Np" "Vp" "Vthp" "δBrms" "δVrms" "σc" "SSN" "F10.7"]
@@ -241,4 +241,4 @@ for i in eachindex(outputNames)
 end
 
 plot(devs...,layout=devL,size=(1000,850))
-savefig("figure\\paper\\contributions\\all\\allDev.png")
+savefig("figure\\contributions\\allDev.png")
